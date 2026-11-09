@@ -1,0 +1,102 @@
+<mxfile host="65bd71144e">
+    <diagram id="payment-as-is" name="1. As-Is — оплата и учёт">
+        <mxGraphModel dx="1570" dy="1322" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Пациент" vertex="1">
+                    <mxGeometry height="65" width="135" x="30" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Кассир: принимает платёж и ведёт двойной учёт" vertex="1">
+                    <mxGeometry height="90" width="200" x="240" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Учёт платежей: Excel на общем диске" vertex="1">
+                    <mxGeometry height="90" width="195" x="560" y="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="ККМ" vertex="1">
+                    <mxGeometry height="65" width="150" x="550" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Бухгалтерия предприятия; файловый режим на локальном сервере" vertex="1">
+                    <mxGeometry height="100" width="230" x="805" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="f" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Бухгалтерия: обрабатывает платежи" vertex="1">
+                    <mxGeometry height="80" width="220" x="810" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="ККМ ↔ 1С: TCP/IP и OLE. Набор полей чека/Excel и технический протокол защиты канала в кейсе не указаны. Двойной учёт создаёт риск расхождений." vertex="1">
+                    <mxGeometry height="105" width="560" x="50" y="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;html=1;" target="b" value="платёж и данные &lt;br&gt;для оформления">
+                    <mxGeometry relative="1" x="-0.0731" y="24" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;html=1;" target="c" value="записать сведения об оплате">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="b" style="endArrow=block;html=1;" target="d" value="провести платёж">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="d" style="endArrow=block;html=1;" target="e" value="данные ККМ через TCP/IP, OLE">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f5" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;" target="e" value="внести / сверить данные">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f6" edge="1" parent="1" source="e" style="endArrow=block;startArrow=block;html=1;" target="f" value="чтение / обработка">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="payment-protected" name="2. Предлагаемые меры — оплата и учёт">
+        <mxGraphModel dx="1609" dy="1354" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Пациент" vertex="1">
+                    <mxGeometry height="65" width="135" x="30" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Кассир: минимум данных для платежа" vertex="1">
+                    <mxGeometry height="90" width="200" x="240" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Excel: временно ограничить доступ и срок хранения; исключить медицинские сведения" vertex="1">
+                    <mxGeometry height="105" width="195" x="610" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="ККМ: ограничение доступа и журнал операций" vertex="1">
+                    <mxGeometry height="65" width="150" x="595" y="295" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Бухгалтерия: PAY-01, разделение ролей, резервирование" vertex="1">
+                    <mxGeometry height="100" width="230" x="805" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="f" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Бухгалтерия: только необходимые платёжные сведения" vertex="1">
+                    <mxGeometry height="80" width="220" x="810" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" value="ЦЕЛЕВЫЕ МЕРЫ. Для ККМ ↔ 1С: проверить совместимость защищённого канала и OLE, сетевую сегментацию, аутентификацию, аудит и сверку. Нельзя считать TLS уже настроенным." vertex="1">
+                    <mxGeometry height="110" width="560" x="30" y="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;html=1;" target="b" value="минимум данных&lt;br&gt;&amp;nbsp;для оплаты">
+                    <mxGeometry relative="1" x="-0.0731" y="24" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;html=1;" target="c" value="PAY-01; ограничение доступа, сверка">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="b" style="endArrow=block;html=1;" target="d" value="журнал операции">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="d" style="endArrow=block;html=1;" target="e" value="изолированный канал; &lt;br&gt;защита передачи после проверки совместимости">
+                    <mxGeometry relative="1" x="-0.6109" y="18" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f5" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;" target="e" value="ролевой доступ; сверка расхождений; аудит">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f6" edge="1" parent="1" source="e" style="endArrow=block;startArrow=block;html=1;" target="f" value="ограниченное чтение; аудит">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
