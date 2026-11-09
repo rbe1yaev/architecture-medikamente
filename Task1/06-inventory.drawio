@@ -1,0 +1,86 @@
+<mxfile host="65bd71144e">
+    <diagram id="inventory-as-is" name="1. As-Is — склад и ТМЦ">
+        <mxGraphModel dx="1671" dy="1406" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Склад: учёт ТМЦ и закупок оборудования" vertex="1">
+                    <mxGeometry height="80" width="210" x="40" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Торговля и склад; файловый режим" vertex="1">
+                    <mxGeometry height="90" width="205" x="355" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Бухгалтерия предприятия" vertex="1">
+                    <mxGeometry height="90" width="205" x="735" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Локальный сервер Windows Server 2022" vertex="1">
+                    <mxGeometry height="85" width="205" x="355" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Бухгалтерия: использует данные учёта" vertex="1">
+                    <mxGeometry height="85" width="205" x="735" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="Факт интеграции двух файловых 1С указан; состав передаваемых полей, направление обмена и механизм интеграции не раскрыты. Пунктир обозначает эту неопределённость." vertex="1">
+                    <mxGeometry height="125" width="510" x="60" y="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;startArrow=block;html=1;" target="b" value="внести / &lt;br&gt;читать данные ТМЦ&lt;br&gt;&amp;nbsp;и закупок">
+                    <mxGeometry relative="1" x="-0.0476" y="30" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;dashed=1;" target="c" value="обмен учётными &lt;br&gt;данными: состав ?">
+                    <mxGeometry relative="1" x="0.0286" y="20" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;" target="d" value="файловое хранение">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="c" style="endArrow=block;startArrow=block;html=1;" target="e" value="обработка / чтение">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="inventory-protected" name="2. Предлагаемые меры — склад и ТМЦ">
+        <mxGraphModel dx="1761" dy="1482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Склад: роль учёта ТМЦ" vertex="1">
+                    <mxGeometry height="80" width="210" x="40" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Торговля и склад: INV-01, контроль изменений" vertex="1">
+                    <mxGeometry height="90" width="205" x="355" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="1С:Бухгалтерия: минимально необходимые поля" vertex="1">
+                    <mxGeometry height="90" width="205" x="735" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Хранилище: резервирование, ограничение доступа" vertex="1">
+                    <mxGeometry height="85" width="205" x="355" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Бухгалтерия: роль по учёту ТМЦ" vertex="1">
+                    <mxGeometry height="85" width="205" x="735" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" value="ЦЕЛЕВЫЕ МЕРЫ. После инвентаризации полей интеграции: фильтрация персональных данных, контроль целостности, защищённый обмен, аудит и сверка. Тег INV-01 не означает, что все данные ТМЦ — персональные." vertex="1">
+                    <mxGeometry height="145" width="570" x="70" y="550" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;startArrow=block;html=1;" target="b" value="ролевой доступ;&lt;br&gt;&amp;nbsp;аудит изменений">
+                    <mxGeometry relative="1" x="-0.0476" y="20" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;dashed=1;" target="c" value="минимизация полей; &lt;br&gt;защищённый обмен и сверка">
+                    <mxGeometry relative="1" x="0.0286" y="20" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;" target="d" value="контроль целостности / резервирование">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="c" style="endArrow=block;startArrow=block;html=1;" target="e" value="ограниченное чтение; аудит">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

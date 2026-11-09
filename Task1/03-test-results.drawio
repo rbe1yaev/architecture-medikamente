@@ -1,0 +1,90 @@
+<mxfile host="65bd71144e">
+    <diagram id="tests-as-is" name="1. As-Is — учёт анализов">
+        <mxGraphModel dx="1671" dy="1406" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Источник результата анализа: в кейсе не указан" vertex="1">
+                    <mxGeometry height="75" width="190" x="35" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Ручной учёт анализов: исполнитель не уточнён" vertex="1">
+                    <mxGeometry height="95" width="205" x="320" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Журнал / результаты анализов: Excel или сканы" vertex="1">
+                    <mxGeometry height="100" width="205" x="630" y="135" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Общий диск: файловый сервер" vertex="1">
+                    <mxGeometry height="85" width="205" x="630" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Медицинский специалист: использует результат для лечения (путь не описан)" vertex="1">
+                    <mxGeometry height="95" width="215" x="900" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="Достоверно: анализы учитываются вручную в Excel/сканах на общем диске. Внешняя лаборатория и её API — только будущая интеграция, а не часть As-Is. Пунктир — путь для уточнения." vertex="1">
+                    <mxGeometry height="120" width="485" x="40" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;html=1;dashed=1;" target="b" value="результат с идентификатором&lt;br&gt;&amp;nbsp;пациента; источник ?">
+                    <mxGeometry relative="1" x="-0.0526" y="28" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;startArrow=block;html=1;" target="c" value="внести / &lt;br&gt;прочитать результат">
+                    <mxGeometry relative="1" x="0.0516" y="26" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="c" style="endArrow=block;startArrow=block;html=1;" target="d" value="хранение / чтение файла">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="d" style="endArrow=block;html=1;dashed=1;" target="e" value="доступ к результату: &lt;br&gt;уточнить">
+                    <mxGeometry relative="1" x="0.0909" y="-25" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="tests-protected" name="2. Предлагаемые меры — учёт анализов">
+        <mxGraphModel dx="1589" dy="1338" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Источник результата: установить до внедрения" vertex="1">
+                    <mxGeometry height="75" width="190" x="35" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Проверка принадлежности результата пациенту и целостности" vertex="1">
+                    <mxGeometry height="95" width="205" x="320" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="c" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Результаты: MED-01, шифрование, контроль версий" vertex="1">
+                    <mxGeometry height="100" width="205" x="630" y="135" as="geometry"/>
+                </mxCell>
+                <mxCell id="d" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;" value="Изолированное хранилище с аудитом и резервированием" vertex="1">
+                    <mxGeometry height="85" width="205" x="630" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="e" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Уполномоченный медицинский специалист" vertex="1">
+                    <mxGeometry height="85" width="215" x="900" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="n" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" value="ЦЕЛЕВЫЕ МЕРЫ. После уточнения источника: аутентификация отправителя, защищённый канал, сверка пациента, доступ по назначению. Будущий API лаборатории отдельно проектируется в следующих заданиях." vertex="1">
+                    <mxGeometry height="120" width="485" x="40" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" edge="1" parent="1" source="a" style="endArrow=block;html=1;dashed=1;" target="b" value="подтверждённый источник / &lt;br&gt;защищённая передача">
+                    <mxGeometry relative="1" x="-0.0526" y="28" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f2" edge="1" parent="1" source="b" style="endArrow=block;html=1;" target="c" value="проверка и тег MED-01; &lt;br&gt;журнал изменений">
+                    <mxGeometry relative="1" x="0.0516" y="26" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f3" edge="1" parent="1" source="c" style="endArrow=block;startArrow=block;html=1;" target="d" value="шифрование при &lt;br&gt;хранении / передаче">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" edge="1" parent="1" source="d" style="endArrow=block;html=1;" target="e" value="доступ по роли, &lt;br&gt;назначению; &lt;br&gt;аудит чтения">
+                    <mxGeometry relative="1" x="-0.2308" y="-37" as="geometry">
+                        <mxPoint y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

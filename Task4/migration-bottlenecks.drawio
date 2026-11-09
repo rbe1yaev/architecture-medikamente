@@ -1,0 +1,78 @@
+<mxfile host="65bd71144e">
+    <diagram id="ishikawa-migration" name="Исикава — узкие места миграции">
+        <mxGraphModel dx="2447" dy="1773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1720" pageHeight="1050" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="text;html=1;align=left;fontSize=24;fontStyle=1;" value="МЕДИКАМЕНТЕ — возможные узкие места миграции и роста нагрузки ×5" vertex="1">
+                    <mxGeometry height="50" width="1450" x="70" y="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="infra" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="ИНФРАСТРУКТУРА&#xa;Ф: один физический сервер&#xa;Р: предел CPU/дискового I/O&#xa;Р: сеть филиалов и восстановление" vertex="1">
+                    <mxGeometry height="165" width="295" x="120" y="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="data" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="ДАННЫЕ&#xa;Ф: Excel, сканы, файловые 1С&#xa;Ф: двойной учёт платежей&#xa;Р: дубли и неверная привязка пациента" vertex="1">
+                    <mxGeometry height="165" width="295" x="520" y="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="integration" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="ИНТЕГРАЦИИ&#xa;Ф: ККМ ↔ 1С по TCP/IP, OLE&#xa;Ф: интеграция двух файловых 1С&#xa;Р: задержки/ошибки обмена, будущий API" vertex="1">
+                    <mxGeometry height="165" width="295" x="920" y="155" as="geometry"/>
+                </mxCell>
+                <mxCell id="software" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" value="ПРИЛОЖЕНИЯ&#xa;Ф: файловый режим 1С&#xa;Р: конкуренция записей при росте&#xa;Р: двойная запись к врачу/блокировка" vertex="1">
+                    <mxGeometry height="165" width="295" x="120" y="745" as="geometry"/>
+                </mxCell>
+                <mxCell id="team" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" value="КОМАНДА&#xa;Ф: три сотрудника ИТ&#xa;Ф: напоминания MVP вручную&#xa;Р: нагрузка сопровождения и инцидентов" vertex="1">
+                    <mxGeometry height="165" width="295" x="520" y="745" as="geometry"/>
+                </mxCell>
+                <mxCell id="cutover" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=14;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" value="ПРОЦЕСС ПЕРЕХОДА&#xa;Ф: ручные операции и разрозненные файлы&#xa;Р: расхождение при параллельной работе&#xa;Р: долгий перенос/откат без проверки" vertex="1">
+                    <mxGeometry height="165" width="295" x="920" y="745" as="geometry"/>
+                </mxCell>
+                <mxCell id="head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=19;fillColor=#f8cecc;strokeColor=#b85450;" value="СЛЕДСТВИЕ&#xa;Замедление записи, ошибки данных и недоступность сервисов при миграции и росте ×5" vertex="1">
+                    <mxGeometry height="145" width="270" x="1410" y="455" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" value="Ф — факт из кейса; Р — риск/гипотеза, требует проверки. Микросервисы не считаются обязательной целью; структура наследия в кейсе не раскрыта как единый монолит." vertex="1">
+                    <mxGeometry height="70" width="1280" x="120" y="955" as="geometry"/>
+                </mxCell>
+                <mxCell id="spine" edge="1" parent="1" style="endArrow=block;endFill=1;strokeWidth=4;strokeColor=#666666;html=1;" target="head">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="85" y="530" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b1" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#6c8ebf;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="320" as="sourcePoint"/>
+                        <mxPoint x="400" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b2" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#6c8ebf;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="320" as="sourcePoint"/>
+                        <mxPoint x="800" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b3" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#6c8ebf;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1070" y="320" as="sourcePoint"/>
+                        <mxPoint x="1200" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b4" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#82b366;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="745" as="sourcePoint"/>
+                        <mxPoint x="400" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#82b366;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="745" as="sourcePoint"/>
+                        <mxPoint x="800" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b6" edge="1" parent="1" style="endArrow=none;strokeWidth=3;strokeColor=#82b366;html=1;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1070" y="745" as="sourcePoint"/>
+                        <mxPoint x="1200" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

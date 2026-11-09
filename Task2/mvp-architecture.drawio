@@ -1,0 +1,223 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram id="mvp-context" name="1. C4 Context — MVP">
+    <mxGraphModel dx="1969" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=22;fontStyle=1;align=left;" value="МЕДИКАМЕНТЕ — целевой контекст MVP" vertex="1">
+          <mxGeometry height="40" width="900" x="50" y="25" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="МЕДИКАМЕНТЕ" c4Type="SystemScopeBoundary" c4Application="Проектируемая система записи MVP" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Application%]&lt;/div&gt;" id="scope">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=bottom;spacing=10;dashPattern=8 4;metaEdit=1;connectable=0;pointerEvents=0;absoluteArcSize=1;" vertex="1">
+            <mxGeometry height="580" width="520" x="385" y="135" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Пациент" c4Type="Person" c4Description="Самостоятельно записывается" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="patient">
+          <mxCell parent="1" style="html=1;fontSize=13;whiteSpace=wrap;fillColor=#6C6477;strokeColor=#4D4D4D;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="180" width="200" x="70" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Сотрудник ресепшена" c4Type="Person" c4Description="Отслеживает запись и напоминает о приёме" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="reception">
+          <mxCell parent="1" style="html=1;fontSize=13;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="180" width="200" x="70" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Медицинский специалист" c4Type="Person" c4Description="Получает напоминание от ресепшена" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="medic">
+          <mxCell parent="1" style="html=1;fontSize=13;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="180" width="200" x="1190" y="500" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Система записи MVP" c4Type="Software System" c4Description="Портал пациента, рабочее место ресепшена, записи и контакты; контроль доступа и аудит" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="system">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="160" width="320" x="485" y="190" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Аналитический контур" c4Type="Software System" c4Description="Позднее: только проверенные обезличенные наборы" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="analytics">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;dashed=1;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="135" width="300" x="1110" y="202.5" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Сплошные связи — проект MVP. Серый пунктир — следующий этап. Напоминания отправляет ресепшен вручную; мобильное приложение, API лаборатории и автоматические уведомления не входят в MVP. Существующие файловые 1С и общий диск не показаны как интеграции новой системы." vertex="1">
+          <mxGeometry height="105" width="780" x="60" y="760" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Description="Записывается и видит только свои записи" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="e1">
+          <mxCell edge="1" parent="1" source="patient" style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;startFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="system">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Смотрит записи и контакты для напоминания" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="e2">
+          <mxCell edge="1" parent="1" source="reception" style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;startFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="system">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Напоминает за день до приёма" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="e3">
+          <mxCell edge="1" parent="1" source="reception" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="patient">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Напоминает за день до приёма" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="e4">
+          <mxCell edge="1" parent="1" source="reception" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="medic">
+            <mxGeometry relative="1" x="0.0109" as="geometry">
+              <Array as="points">
+                <mxPoint x="330" y="630" />
+                <mxPoint x="330" y="630" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Позднее: обезличенная выгрузка" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="e5">
+          <mxCell edge="1" parent="1" source="system" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#737373;strokeColor=#999999;dashed=1;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="analytics">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mvp-containers" name="2. C4 Container — защита и аналитика">
+    <mxGraphModel dx="1969" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=22;fontStyle=1;align=left;" value="МЕДИКАМЕНТЕ — блоки Privacy by Design" vertex="1">
+          <mxGeometry height="40" width="950" x="45" y="20" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Система записи MVP" c4Type="SystemScopeBoundary" c4Application="Проектируемые контейнеры" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Application%]&lt;/div&gt;" id="boundary">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=bottom;spacing=10;dashPattern=8 4;metaEdit=1;connectable=0;pointerEvents=0;absoluteArcSize=1;" vertex="1">
+            <mxGeometry height="710" width="1010" x="140" y="90" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Портал пациента" c4Type="Container" c4Description="Запись, просмотр своих записей" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="portal">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="150" y="147.5" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Рабочее место ресепшена" c4Type="Container" c4Description="Записи и необходимые контакты" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="staff">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="150" y="465" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Идентификация" c4Type="Container" c4Description="Личность и сессия" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="identity">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="105" width="215" x="465" y="150" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Политика доступа" c4Type="Container" c4Description="Пациент — свои записи; ресепшен — расписание и контакты; запрет по умолчанию" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="policy">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="130" width="215" x="465" y="345" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Сервис записи" c4Type="Container" c4Description="Минимум данных, проверка владельца записи" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="booking">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="115" width="240" x="780" y="255" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Записи и расписание" c4Type="Container" c4Description="Хранилище: время, специалист, ID пациента" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="appointments">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="105" width="240" x="780" y="460" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Контакты пациентов" c4Type="Container" c4Description="Отдельное хранилище без медкарты" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="profiles">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="105" width="240" x="780" y="645" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Аудит и жизненный цикл" c4Type="Container" c4Description="Доступ, выгрузки, сроки и удаление" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="audit">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="215" x="465" y="630" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Контролируемая выгрузка" c4Type="Container" c4Description="Позднее: теги, минимизация, обезличивание" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="export">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;dashed=1;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="120" width="270" x="1250" y="245" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Аналитический слой" c4Type="Software System" c4Description="Позднее: изолированное хранилище обезличенных наборов и BI" label="&lt;b&gt;%c4Name%&lt;/b&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;%c4Description%&lt;/div&gt;" id="lake">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;dashed=1;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="120" width="270" x="1250" y="575" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Синие блоки — целевой MVP; серые пунктирные — следующий этап. MED-01 не входит в систему записи. Поля и сроки хранения определяются с владельцем данных; прямой доступ аналитики к исходным файлам исключён." vertex="1">
+          <mxGeometry height="90" width="1190" x="140" y="840" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Description="Вход и запрос" label="&lt;span&gt;%c4Description%&lt;/span&gt;" id="f1">
+          <mxCell edge="1" parent="1" source="portal" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;fontStyle=1" target="identity">
+            <mxGeometry relative="1" x="-0.0323" y="-15" as="geometry">
+              <mxPoint x="1" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Вход и запрос" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f2">
+          <mxCell edge="1" parent="1" source="staff" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="identity">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="410" y="520" />
+                <mxPoint x="410" y="202.5" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Личность и роль" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f3">
+          <mxCell edge="1" parent="1" source="identity" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="policy">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Разрешённый запрос" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f4">
+          <mxCell edge="1" parent="1" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;">
+            <mxGeometry relative="1" x="0.3636" y="10" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="720" y="410" />
+                <mxPoint x="720" y="290" />
+              </Array>
+              <mxPoint x="670" y="410" as="sourcePoint" />
+              <mxPoint x="770" y="290" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Запись и чтение" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f5">
+          <mxCell edge="1" parent="1" source="booking" style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;startFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="appointments">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Нужные контакты" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f6">
+          <mxCell edge="1" parent="1" source="booking" style="endArrow=blockThin;startArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;startFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="profiles">
+            <mxGeometry relative="1" x="0.3115" y="10" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1070" y="340" />
+                <mxPoint x="1070" y="697.5" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="События доступа" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f7">
+          <mxCell edge="1" parent="1" source="booking" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="audit">
+            <mxGeometry relative="1" x="0.3604" as="geometry">
+              <mxPoint y="1" as="offset" />
+              <Array as="points">
+                <mxPoint x="740" y="330" />
+                <mxPoint x="740" y="685" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Позднее: разрешённый экспорт" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f8">
+          <mxCell edge="1" parent="1" source="booking" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#737373;strokeColor=#999999;dashed=1;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="export">
+            <mxGeometry relative="1" x="0.0435" y="10" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1190" y="290" />
+                <mxPoint x="1190" y="290" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Обезличенный набор и lineage" label="&lt;b&gt;%c4Description%&lt;/b&gt;" id="f9">
+          <mxCell edge="1" parent="1" source="export" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#737373;strokeColor=#999999;dashed=1;endFill=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;" target="lake">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
